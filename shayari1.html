@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Hithu ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto&display=swap" rel="stylesheet">
+<style>
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    transition: background 1s ease;
+    color: white;
+}
+
+h1 {
+    font-family: 'Dancing Script', cursive;
+    color: #fff;
+    font-size: 3em;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+}
+
+.shayari-card {
+    background: rgba(0,0,0,0.5);
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.6em;
+    max-width: 80%;
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    white-space: pre-wrap;
+}
+
+button {
+    background: #ff3366;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ff6699;
+}
+</style>
+</head>
+<body>
+<h1>For My Hithu ❤️</h1>
+<div class="shayari-card">
+    <span id="shayariText"></span>
+</div>
+<div>
+    <button id="prevBtn">Previous</button>
+    <button id="nextBtn">Next</button>
+</div>
+
+<script>
+const shayaris = [
+`Main rahoon ya na rahoon
+Tum mujh mein kahin baaki rehna
+Mujhe neend aaye jo aakhiri
+Tum khwabon mein aate rehna
+Bas itna hai tumse kehna`,
+
+`Tu hi mera.....
+Tu hai qismat, tu hi hai rehmat
+Tujhse hi judi hai meri har khushi`,
+
+`Tum mile, toh lamhe tham gaye
+Tum mile, toh saare gham gaye
+Tum mile, toh muskurana aa gaya`,
+
+`Tere Waaste Mera Ishq Sufiyana
+Mera Ishq Sufiyana
+Mera Ishq Sufiyana`,
+
+`Bol do na zara
+Dil mein jo hai chhupa
+Main kisi se kahunga nahi`,
+
+`Itni si baat hai, mujhe tumse pyaar hai
+Itni si baat hai, haan mujhe tumse pyaar hai`,
+
+`Haal-e-dil tujhko sunata
+Dil agar yeh bol paata
+Bakhuda tujhko hai chahta jaan`,
+
+`Tujhe milke laga hai ye
+Tujhe dhoondhta raha tha main
+Tujhme hai kuch aisi subah sa
+Jiski khatir main tha jaga sa`
+];
+
+const backgrounds = [
+    'url("https://i.ytimg.com/vi/4WB5y4DAcKE/maxresdefault.jpg")',
+    'url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg48wyApsE-Er7k_SQlhGROEvQL0tpf0yAAHCKN31rMjqhyGgDVHN7h2hS84zAg5ZIs4DnXaK5e0pC9VDzW_Cax-qvLTwH9SSK93I5U0q_U-_TVI-30Q6EGw74epNZkpWpM2m3VfU-cT7o/s640/bi-101537.jpg")',
+    'url("https://images.filmibeat.com/img/popcorn/fan_images/122_20091020_73343400_wallie8-1961400590.jpg")',
+    'url("https://drop.ndtv.com/albums/ENTERTAINMENT/dirtypicture-vidya/vidya-silky.jpg")',
+    'url("https://filmyfocus.com/wp-content/uploads/2023/07/Me-Kisi-Se-Kahunga-Nahi-Mp3-Song-Download.jpg")',
+    'url("https://img.nowrunning.com/content/movie/2016/Azhar/bg-video-415201693008AM.jpg")',
+    'url("https://idiva-media.ilnmedia.com/content/2020/Aug/Emraan-Hashmi_THUMB_5f3656b26e6b5.jpg")',
+    'url("https://m.media-amazon.com/images/M/MV5BNGYyMmE5NjgtZDhlNS00NjRjLWI5YTAtNmQ2OWNjNjAzNTk1XkEyXkFqcGc@._V1_.jpg")'
+];
+
+let index = 0;
+const shayariText = document.getElementById('shayariText');
+const nextBtn = document.getElementById('nextBtn');
+const prevBtn = document.getElementById('prevBtn');
+
+function showShayari() {
+    shayariText.textContent = shayaris[index];
+    document.body.style.backgroundImage = backgrounds[index];
+    document.body.style.backgroundSize = 'cover';
+    document.body.style.backgroundPosition = 'center';
+    document.body.style.transition = 'background 1s ease';
+}
+
+nextBtn.addEventListener('click', () => {
+    index = (index + 1) % shayaris.length;
+    showShayari();
+});
+
+prevBtn.addEventListener('click', () => {
+    index = (index - 1 + shayaris.length) % shayaris.length;
+    showShayari();
+});
+
+// Initialize
+showShayari();
+</script>
+</body>
+</html>
